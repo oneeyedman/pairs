@@ -71,6 +71,31 @@ body {
   padding: 0;
 }
 
+.pairs__overlay {
+  background: #3CDBC0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  opacity: .15;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.pairs__overlay--active {
+  width: 100vw;
+  height: 100vh;
+}
+
 .card {
   background: pink;
   border-radius: 10px;
@@ -113,6 +138,11 @@ body {
 
 .card--is-visible .card__side--back {
   display: none;
+}
+
+.card--disabled {
+  cursor: default;
+  opacity: .5;
 }
 
 @media all and (min-width: 550px) {

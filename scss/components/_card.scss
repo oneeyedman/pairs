@@ -31,3 +31,7 @@
     display: none;
   }
 }
+.card--disabled {
+  cursor: default;
+  opacity: .5;
+}

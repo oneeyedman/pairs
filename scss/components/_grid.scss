@@ -11,3 +11,21 @@
   padding: 0;
 }
 .pairs__card {}
+
+.pairs__overlay {
+  background: #3CDBC0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width:0;
+  height: 0;
+  overflow: hidden;
+  opacity: .15;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pairs__overlay--active {
+  width: 100vw;
+  height: 100vh;
+}
