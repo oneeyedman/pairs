@@ -1,0 +1,13 @@
+.pairs__game {
+  margin-top: 60px;
+}
+.pairs__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 160px);
+  grid-gap: 20px;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.pairs__card {}

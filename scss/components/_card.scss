@@ -1,0 +1,33 @@
+.card {
+  background: pink;
+  border-radius: 10px;
+  box-shadow: 0 1px 16px rgba(#000, .25);
+  border: 1px solid #999;
+  overflow: hidden;
+  cursor: pointer;
+}
+.card__side {
+  height: 195px;
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.card__side-item {
+  display: block;
+}
+.card__side--front {
+  background: #f4f5f6;
+  display: none;
+}
+.card__side--back {}
+
+.card--is-visible {
+  .card__side--front {
+    display:flex;
+  }
+  .card__side--back {
+    display: none;
+  }
+}
