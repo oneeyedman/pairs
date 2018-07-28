@@ -13,7 +13,7 @@
 }
 
 .pairs__overlay {
-  background: rgba($color-green, .75);
+  background: rgba($color-green, .5);
   position: fixed;
   left: 0;
   top: 0;
@@ -21,19 +21,22 @@
   height: 0;
   overflow: hidden;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  font-size: 200px;
+  font-size: 100px;
   color: white;
+  text-align: right;
+  box-sizing: border-box;
+  padding: 0 60px;
 }
 .pairs__overlay--active {
   width: 100vw;
   height: 100vh;
 }
 .pairs__overlay--ko {
-  background: rgba($color-error, .75);
+  background: rgba($color-error, .5);
 }
 
 .pairs__overlay--ok {
-  background: rgba($color-green, .85);
+  background: rgba($color-green, .5);
 }

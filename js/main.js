@@ -176,6 +176,3 @@ const beginGame = () => {
 };
 
 goBTN.addEventListener('click', beginGame);
-
-
-
