@@ -8,7 +8,7 @@ Vamos de definir los distintos hitos del ejercicio:
 
 En primer lugar vamos a realizar una maquetación básica del juego.
 
-![Juego parejas v1](assets/images/2-final-bis/juego-parejas-v1.png)
+![Juego parejas v1](https://github.com/Adalab/materiales-front-end-D/raw/master/evaluaciones/assets/images/2-final-bis/juego-parejas-v1.png)
 
 La aplicación consta de dos partes
 1. Un formulario para elegir el tamaño de la partida y un botón
@@ -28,11 +28,11 @@ Al hacer clic sobre el botón de 'Comenzar', nuestra aplicación debe recoger el
 
 Una vez mostramos el listado de cartas vamos a hacer que el listado sea interactivo. Para eso, lo primero que haremos será ocultar la parte frontal de las cartas mostrando solo la parte de atrás.
 
-![Juego parejas v2](assets/images/2-final-bis/juego-parejas-v2.png)
+![Juego parejas v2](https://github.com/Adalab/materiales-front-end-D/raw/master/evaluaciones/assets/images/2-final-bis/juego-parejas-v2.png)
 
 Al hacer clic sobre una carta vamos a mostrar su parte frontal y a ocultar su parte trasera. Al volver a hacer clic haremos la operación contraria, y volveremos a ver su parte trasera y ocultar la frontal.
 
-![Juego parejas v3](assets/images/2-final-bis/juego-parejas-v3.png)
+![Juego parejas v3](https://github.com/Adalab/materiales-front-end-D/raw/master/evaluaciones/assets/images/2-final-bis/juego-parejas-v3.png)
 
 ### 4. BONUS: Implementar el juego
 
