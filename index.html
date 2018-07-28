@@ -1,10 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Adalab Web Starter Kit</title>
-	<link rel="stylesheet" href="css/main.css">
+  <meta charset="UTF-8">
+  <title>Juego de las parejas! Yay 🦄!</title>
+  <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
+  <div class="pairs">
+    <header class="pairs__header">
+      <div class="wrapper">
+        <h1 class="pairs__title">El juego de las parejas</h1>
+        <div class="pairs__settings">
+          <ul class="pairs__options">
+            <li class="pairs__option">
+              <label class="pairs__option-label" for="game-option-1">
+                <input class="pairs__option-item" type="radio" name="game-options" id="game-option-1" value="4" checked> 4
+              </label>
+            </li>
+            <li class="pairs__option">
+              <label class="pairs__option-label" for="game-option-2">
+                <input class="pairs__option-item" type="radio" name="game-options" id="game-option-2" value="6"> 6
+              </label>
+            </li>
+            <li class="pairs__option">
+              <label class="pairs__option-label" for="game-option-3">
+                <input class="pairs__option-item" type="radio" name="game-options" id="game-option-3" value="8"> 8
+              </label>
+            </li>
+          </ul>
+
+          <button class="pairs__go">Comenzar</button>
+        </div>
+      </div>
+    </header>
+    <main class="pairs__game">
+      <ul class="pairs__cards">
+      </ul>
+    </main>
+  </div>
+
+  <script src="js/main.min.js"></script>
 </body>
+
 </html>

@@ -1,1 +1,18 @@
 $colorBlue: red;
+
+
+body {
+  margin: 0;
+  font-family: 'ubuntu', Arial, sans-serif
+}
+
+.wrapper {
+  margin: 0 30px;
+  @media all and (min-width: 550px) {
+    margin: 0 60px;
+  }
+
+  @media all and (min-width: 768px) {
+    margin: 0 80px;
+  }
+}
