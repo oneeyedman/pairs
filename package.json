@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "Adalab web starter kit",
 	"dependencies": {
-		"browser-sync": "^2.24.5",
+		"browser-sync": "^2.24.6",
 		"eslint": "^4.19.1",
 		"gulp": "^4",
 		"gulp-autoprefixer": "*",
@@ -22,7 +22,7 @@
 	},
 	"devDependencies": {},
 	"scripts": {
-    "start": "gulp",
+		"start": "gulp",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
