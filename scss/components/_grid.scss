@@ -13,7 +13,7 @@
 }
 
 .pairs__overlay {
-  background: rgba(#3CDBC0, .75);
+  background: rgba($color-green, .75);
   position: fixed;
   left: 0;
   top: 0;
@@ -31,9 +31,9 @@
   height: 100vh;
 }
 .pairs__overlay--ko {
-  background: rgba(#da3030, .75);
+  background: rgba($color-error, .75);
 }
 
 .pairs__overlay--ok {
-  background: rgba(#3CDBC0, .85);
+  background: rgba($color-green, .85);
 }
