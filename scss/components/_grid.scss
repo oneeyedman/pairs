@@ -9,23 +9,31 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  transition: background ease .5s;
 }
-.pairs__card {}
 
 .pairs__overlay {
-  background: #3CDBC0;
+  background: rgba(#3CDBC0, .75);
   position: fixed;
   left: 0;
   top: 0;
   width:0;
   height: 0;
   overflow: hidden;
-  opacity: .15;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 200px;
+  color: white;
 }
 .pairs__overlay--active {
   width: 100vw;
   height: 100vh;
+}
+.pairs__overlay--ko {
+  background: rgba(#da3030, .75);
+}
+
+.pairs__overlay--ok {
+  background: rgba(#3CDBC0, .85);
 }

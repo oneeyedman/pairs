@@ -1,5 +1,5 @@
 .card {
-  background: pink;
+  background: white;
   border-radius: 10px;
   box-shadow: 0 1px 16px rgba(#000, .25);
   border: 1px solid #999;
@@ -21,8 +21,6 @@
   background: #f4f5f6;
   display: none;
 }
-.card__side--back {}
-
 .card--is-visible {
   .card__side--front {
     display:flex;
@@ -33,5 +31,22 @@
 }
 .card--disabled {
   cursor: default;
-  opacity: .5;
+  position: relative;
+  &::after {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #3CDBC0;
+    content: '\f058';
+    z-index:1;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+  }
+  .card__side--front {
+    opacity: .5;
+  }
 }

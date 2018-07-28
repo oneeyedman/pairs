@@ -5,12 +5,35 @@ const goBTN = document.querySelector('.pairs__go');
 const cards = document.querySelector('.pairs__cards');
 const pauseLayer = document.querySelector('.pairs__overlay');
 
-const maxVisibleCards = 2
+const maxVisibleCards = 2;
 let visibleCards = 0;
 const pairs = {
   a: 0,
   b: 0
 };
+
+
+
+const pauseGame = label => {
+  pauseLayer.innerHTML = label;
+  pauseLayer.classList.add('pairs__overlay--active');
+};
+
+const showError = label => {
+  pauseLayer.innerHTML = label;
+  pauseLayer.classList.add('pairs__overlay--active','pairs__overlay--ko');
+};
+
+const showVictory = label => {
+  pauseLayer.innerHTML = label;
+  pauseLayer.classList.add('pairs__overlay--active','pairs__overlay--ok');
+};
+
+const resumeGame = () => {
+  pauseLayer.innerHTML = '';
+  pauseLayer.classList.remove('pairs__overlay--active','pairs__overlay--ko','pairs__overlay--ok');
+};
+
 
 const resetGame = () => {
   cards.innerHTML = '';
@@ -21,26 +44,33 @@ const resetGame = () => {
 
 
 const checkSettings = options => {
+  let setting;
   for (const option of options) {
     if (option.checked) {
-      return option.value;
+      setting = option.value;
     }
   }
+  return setting;
 };
 
 const hideCards = () => {
-  const cards = document.querySelectorAll('.card--is-visible');
-  for (const c of cards) {
-    c.classList.remove('card--is-visible');
-  }
-  visibleCards = 0;
-  pauseLayer.classList.remove('pairs__overlay--active');
+  showError('😱');
+  setTimeout(()=>{
+    const cards = document.querySelectorAll('.card--is-visible:not(.card--disabled)');
+    for (const c of cards) {
+      c.classList.remove('card--is-visible');
+    }
+    visibleCards = 0;
+    resumeGame();
+  },500);
+
 };
 
 
 const cardCounter = c => {
   visibleCards += parseInt(c);
-}
+};
+
 
 
 const disableCards = (pairID) => {
@@ -52,25 +82,7 @@ const disableCards = (pairID) => {
     }
   }
   visibleCards = 0;
-  pauseLayer.classList.remove('pairs__overlay--active');
-};
-
-
-const checkVisiblePair = () => {
-  pauseLayer.classList.add('pairs__overlay--active');
-  console.log('comprobando parejas');
-  console.log(`cartas visibles: ${visibleCards}`);
-  console.log(`carta A: ${pairs.a}`);
-  console.log(`carta B: ${pairs.b}`);
-  if (pairs.a === pairs.b) {
-    console.log('IGUALES!!!');
-    disableCards(pairs.a);
-  } else {
-    console.log('Todo mal');
-    //mostrar overflow
-    setTimeout(hideCards, 1000);
-  }
-  console.log('***')
+  resumeGame();
 };
 
 
@@ -86,7 +98,7 @@ const playCard = e => {
     } else {
       card.classList.add('card--is-visible');
       cardCounter(1);
-      if (visibleCards == 1) {
+      if (visibleCards === 1) {
         pairs.a = card.getAttribute('data-pair');
       } else {
         pairs.b = card.getAttribute('data-pair');
@@ -95,11 +107,24 @@ const playCard = e => {
         checkVisiblePair();
       }
     }
-
   }
+};
+
+const checkVisiblePair = () => {
+  pauseGame('🤔');
+  if (pairs.a === pairs.b) {
+    setTimeout(()=>{
+      showVictory('🤘');
+      setTimeout(()=>{
+        disableCards(pairs.a);
+      },400);
+    }, 500);
+  } else {
+    setTimeout(hideCards, 500);
+  }
+};
 
 
-}
 
 const initGame = (data) => {
   for (const card of data) {
@@ -135,8 +160,10 @@ const initGame = (data) => {
 };
 
 
+
 const beginGame = () => {
   resetGame();
+  goBTN.innerHTML = 'Empezar de nuevo';
   const cardsURL = 'https://raw.githubusercontent.com/Adalab/cards-data/master/' + checkSettings(settings) + '.json';
 
   fetch(cardsURL)
